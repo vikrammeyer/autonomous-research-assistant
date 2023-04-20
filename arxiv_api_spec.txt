@@ -1,0 +1,16 @@
+Each article is divided up into a number of fields that can individually be searched. For example, the titles of an article can be searched, as well as the author list, abstracts, and journal reference. To search one of these fields, we simply prepend the field prefix followed by a colon to our search term. For example, suppose we wanted to find all articles by the author Adrian Del Maestro. We could construct the following query `au:del_maestro`
+
+The following are prefixes to be used in the search query for a field to be searched. ti: for Title, au: for Author, abs: for Abstract, jr: for Journal Reference, cat: for subject category.
+
+The API allows advanced query construction by combining these search fields with Boolean operators. For example, suppose we want to find all articles by the author Adrian DelMaestro that also contain the word checkerboard in the title. We could construct the following query, using the AND operator: `au:del_maestro+AND+ti:checkerboard`/
+
+As expected, this query picked out the one of the nine previous results with checkerboard in the title. Note that we included + signs in the urls to the API. In a url, a + sign encodes a space, which is useful since spaces are not allowed in url's. It is always a good idea to escape the characters in your url's, which is a common feature in most programming libraries that deal with url's. Note that the <title> of the returned feed has spaces in the query constructed. It is a good idea to look at <title> to see if you have escaped your url correctly.
+
+The three possible Boolean operators: AND, OR, ANDNOT. The ANDNOT Boolean operator is particularly useful, as it allows us to filter search results based on certain fields. For example, if we wanted all of the articles by the author Adrian DelMaestro with titles that did not contain the word checkerboard, we could construct the following query: ``au:del_maestro+ANDNOT+ti:checkerboard`
+
+Finally, even more complex queries can be used by using parentheses for grouping the Boolean expressions. To include parentheses in in a url, use %28 for a left-parens (, and %29 for a right-parens ). For example, if we wanted all of the articles by the author Adrian DelMaestro with titles that did not contain the words checkerboard, OR Pyrochore, we could construct the following query: `au:del_maestro+ANDNOT+%28ti:checkerboard+OR+ti:Pyrochlore%29`
+
+You can include entire phrases by enclosing the phrase in double quotes, escaped by %22. For example, if we wanted all of the articles by the author Adrian DelMaestro with titles that contain quantum criticality, we could construct the following query: `au:del_maestro+AND+ti:%22quantum+criticality%22`
+
+Here are the grouping operators used in the API. ( ) is encoded with %28 %29 and is used to group Boolean expressions for Boolean operator precedence.
+Double quotes is encoded with %22 %22 and is used to group multiple words into phrases to search a particular field. Space is encoded with +	and is used to extend a search_query to include multiple fields.
