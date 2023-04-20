@@ -199,6 +199,8 @@ Notes:
 
 - [The Complete Beginner Guide to Autonomous Agents](https://www.mattprd.com/p/the-complete-beginners-guide-to-autonomous-agents)
 - [(github repo) BabyAGI ](https://github.com/yoheinakajima/babyagi/blob/main/babyagi.py)
+- [(github repo) Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)
 - [Task-Driven Autonomous Agent](https://yoheinakajima.com/task-driven-autonomous-agent-utilizing-gpt-4-pinecone-and-langchain-for-diverse-applications/)
 - [AutoGPT with LangChain](https://python.langchain.com/en/latest/use_cases/autonomous_agents/marathon_times.html#autogpt-as-a-research-data-munger)
+- [Arxiv API](https://info.arxiv.org/help/api/basics.html)
 - [Video Overview](https://youtu.be/dexcFQVMqJU)
